@@ -60,7 +60,7 @@ strong{font-weight:700}
 .center{text-align:center}
 .h-anton{font-family:'Anton',Impact,'Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;line-height:1.15;letter-spacing:.2px;margin:0 0 16px}
 .c-lime{color:var(--lime)}
-.topbar{background:var(--lime);color:#000;text-align:center;font-size:14px;line-height:1.35;padding:9px 14px;font-weight:600}
+.topbar{background:var(--lime);color:#000;text-align:center;font-size:14px;line-height:1.35;padding:9px 14px;font-weight:700}
 .hero{background:#0c0620 url("https://academiadotrafego.com/wp-content/uploads/2025/03/topo-cni.avif") center top/cover no-repeat;color:var(--white);text-align:center;padding:26px 0 54px;min-height:92vh}
 .hero .logo{width:109px;margin:0 auto 18px}
 .hero .pre{font-size:14px;font-style:italic;text-transform:uppercase;margin:0 auto 14px;max-width:470px;opacity:.95}
@@ -68,18 +68,33 @@ strong{font-weight:700}
 .hero .sub{font-size:17px;max-width:520px;margin:0 auto 24px;opacity:.92}
 .player-box{max-width:400px;margin:0 auto}
 .player-box vturb-smartplayer{display:block;margin:0 auto;width:100%;max-width:400px}
-.cta-wrap{margin-top:28px}
-.btn{display:block;width:100%;max-width:460px;margin:0 auto;text-align:center;text-decoration:none;font-family:'Anton',Impact,sans-serif;font-size:24px;letter-spacing:.5px;text-transform:uppercase;line-height:1.1;padding:20px 18px 22px;border-radius:6px;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.cta-wrap{margin-top:24px}
+.btn{display:block;width:100%;max-width:460px;margin:0 auto;text-align:center;text-decoration:none;font-family:'Anton',Impact,sans-serif;font-size:23px;letter-spacing:.5px;text-transform:uppercase;line-height:1.15;padding:19px 18px 20px;border-radius:8px;cursor:pointer;transition:transform .15s ease,filter .15s ease}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
-.btn-lime{background:var(--lime);color:#000;box-shadow:inset 0 -8px 0 -4px rgba(0,0,0,.27),0 0 48px 2px rgba(216,255,45,.47);animation:pulse 2.2s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
-.benefits{max-width:460px;margin:32px auto 0;text-align:left;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:20px}
+.btn-lime{background:var(--lime);color:#000;box-shadow:inset 0 -8px 0 -4px rgba(0,0,0,.27),0 0 40px 2px rgba(216,255,45,.4);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+
+/* Pricing Card (Alta Conversão & Quebra de Objeções de Preço) */
+.pricing-card{max-width:460px;margin:24px auto 0;background:linear-gradient(180deg,rgba(216,255,45,0.09) 0%,rgba(255,255,255,0.03) 100%);border:2px solid var(--lime);border-radius:14px;padding:24px 20px;text-align:center;box-shadow:0 0 35px rgba(216,255,45,0.18)}
+.pricing-badge{display:inline-block;background:var(--lime);color:#000;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px}
+.pricing-countdown{font-size:13px;color:#ffc107;font-weight:700;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+.pricing-old{font-size:14px;color:rgba(255,255,255,0.65);text-decoration:line-through;margin-bottom:2px}
+.pricing-main{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:2px}
+.pricing-installments{font-size:17px;color:var(--white);font-weight:700}
+.pricing-value{font-family:'Anton',Impact,sans-serif;font-size:42px;color:var(--lime);letter-spacing:.5px;line-height:1}
+.pricing-cash{font-size:15px;color:rgba(255,255,255,0.92);font-weight:600;margin-bottom:6px}
+.pricing-daily{font-size:13px;color:#2ce74e;font-weight:700;background:rgba(44,231,78,0.12);padding:5px 12px;border-radius:6px;display:inline-block;margin-bottom:16px}
+.pricing-checklist{list-style:none;padding:0;margin:0 0 20px;text-align:left;display:grid;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.9)}
+.pricing-checklist li{display:flex;align-items:center;gap:8px}
+.pricing-security{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(255,255,255,0.75);margin-top:14px}
+.pricing-security span{display:flex;align-items:center;gap:4px}
+
+.benefits{max-width:460px;margin:28px auto 0;text-align:left;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:20px}
 .benefits h2{font-size:18px;margin:0 0 12px;color:var(--lime);text-align:center}
 .benefits ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:15px}
 .benefits li{display:flex;align-items:center;gap:10px}
-.guarantee-box{max-width:460px;margin:28px auto 0;padding:18px;border-radius:10px;background:rgba(10,176,41,0.12);border:1px solid rgba(44,231,78,0.3);font-size:14px;text-align:center}
-.price-anchor{max-width:460px;margin:12px auto 0;font-size:13.5px;color:rgba(255,255,255,0.88);text-align:center;line-height:1.45}
-.price-anchor span{color:var(--lime);font-weight:700}
+.guarantee-box{max-width:460px;margin:28px auto 0;padding:20px;border-radius:10px;background:rgba(10,176,41,0.12);border:1px solid rgba(44,231,78,0.35);font-size:14.5px;text-align:left;line-height:1.5}
+.guarantee-box h3{color:var(--lime);margin:0 0 8px;font-size:16px;text-align:center}
 .steps-box{max-width:460px;margin:28px auto 0;text-align:left;background:rgba(255,255,255,0.04);border:1px solid rgba(216,255,45,0.22);border-radius:10px;padding:20px}
 .steps-box h2{font-size:18px;margin:0 0 14px;color:var(--lime);text-align:center}
 .step-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;font-size:14.5px;line-height:1.45}
@@ -92,12 +107,28 @@ strong{font-weight:700}
 .faq-item p{margin:0;color:rgba(255,255,255,0.8);line-height:1.45}
 footer{padding:32px 18px;text-align:center;font-size:12px;color:rgba(255,255,255,0.55);background:#070314;border-top:1px solid rgba(255,255,255,0.08)}
 footer p{max-width:600px;margin:0 auto 8px}
+
+/* Exit Intent Modal */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);z-index:999999;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-content{background:#11092a;border:2px solid var(--lime);border-radius:14px;max-width:440px;width:100%;padding:24px 20px;position:relative;text-align:center;box-shadow:0 0 50px rgba(216,255,45,0.25);animation:modalPop .25s ease-out}
+@keyframes modalPop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.modal-close{position:absolute;top:10px;right:14px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:26px;cursor:pointer;line-height:1}
+.modal-close:hover{color:#fff}
+.modal-badge{display:inline-block;background:#ff1d1d;color:#fff;font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.modal-title{font-family:'Anton',Impact,sans-serif;font-size:22px;letter-spacing:.5px;text-transform:uppercase;margin:0 0 10px;color:#fff;line-height:1.2}
+.modal-desc{font-size:13.5px;color:rgba(255,255,255,0.85);line-height:1.45;margin-bottom:14px}
+.modal-price-box{background:rgba(255,255,255,0.06);border:1px dashed var(--lime);border-radius:8px;padding:12px;margin-bottom:14px}
+.modal-price-box strong{color:var(--lime);font-size:16px}
+.modal-guar{background:rgba(10,176,41,0.15);border:1px solid rgba(44,231,78,0.3);border-radius:8px;padding:10px;font-size:12.5px;color:#fff;text-align:left;line-height:1.4;margin-bottom:16px}
+.modal-btn{font-size:18px;padding:16px 14px;animation:pulse 2s infinite}
+.modal-dismiss{display:block;margin:12px auto 0;background:none;border:none;color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline}
+.modal-dismiss:hover{color:rgba(255,255,255,0.8)}
 </style>
 </head>
 <body>
 
 <div class="topbar" id="data-dinamica">
-  Apresentação Exclusiva Disponível por Tempo Limitado
+  🔥 Apresentação Exclusiva Disponível Hoje • Vagas com Acompanhamento Limitadas
 </div>
 
 <main>
@@ -118,11 +149,34 @@ footer p{max-width:600px;margin:0 auto 8px}
         </script>
       </div>
 
-      <div class="cta-wrap">
+      <!-- Card de Preço e Oferta Clara (Elimina Choque no Checkout e Pré-Qualifica o Comprador) -->
+      <div class="pricing-card">
+        <div class="pricing-badge">⚡ Condição Especial Liberada Hoje</div>
+        <div class="pricing-countdown">
+          ⏳ Condição exclusiva expira em: <span id="timer-top">14:59</span>
+        </div>
+        <div class="pricing-old">De R$ 997,00 por apenas</div>
+        <div class="pricing-main">
+          <span class="pricing-installments">12x de</span>
+          <span class="pricing-value">R$ 39,62</span>
+        </div>
+        <div class="pricing-cash">ou R$ 397,00 à vista no Pix</div>
+        <div class="pricing-daily">💡 Apenas <strong>R$ 1,32 por dia</strong> (Menos que um café)</div>
+
+        <ul class="pricing-checklist">
+          <li>✅ <strong>Pagamento ÚNICO</strong> — Sem mensalidades ou anuidades</li>
+          <li>✅ <strong>Acesso Completo + Estrutura Pronta</strong> para Rodar</li>
+          <li>✅ <strong>Configuração Assistida</strong> Passo a Passo com a Equipe</li>
+          <li>✅ <strong>Liberação Imediata</strong> no seu E-mail após o pagamento</li>
+          <li>✅ <strong>Garantia Incondicional de 7 Dias</strong> Kiwify</li>
+        </ul>
+
         <a class="btn btn-lime" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">QUERO ACESSAR A ESTRUTURA AGORA</a>
-        <div class="price-anchor">
-          💳 Condição Especial: <span>Parcelamento em até 12x no Cartão</span> ou <span>Pix com Liberação Imediata</span><br>
-          🔒 Ambiente 100% Seguro Kiwify • 7 Dias de Garantia Incondicional
+
+        <div class="pricing-security">
+          <span>🔒 Compra 100% Segura Kiwify</span>
+          <span>🛡️ 7 Dias de Garantia</span>
+          <span>⚡ Acesso Imediato</span>
         </div>
       </div>
 
@@ -153,34 +207,50 @@ footer p{max-width:600px;margin:0 auto 8px}
       </div>
 
       <div class="guarantee-box">
-        🛡️ <strong>Garantia Blindada de 7 Dias + Pagamento Facilitado:</strong> Você tem 7 dias completos para acessar todo o conteúdo e conhecer a estrutura por dentro. Se por qualquer motivo decidir não continuar, basta solicitar o reembolso direto na plataforma Kiwify com 1 clique.<br><br>
-        💡 <em>Dica de Inscrição: No checkout oficial da Kiwify, você pode parcelar em até 12x no cartão de crédito ou escolher Pix para aprovação instantânea sem bloqueio bancário.</em>
+        <h3>🛡️ GARANTIA BLINDADA DE 7 DIAS (RISCO ZERO)</h3>
+        Você tem 7 dias completos para acessar todo o conteúdo e conhecer a estrutura por dentro. Se por qualquer motivo você decidir que não é para você, basta solicitar o reembolso direto na plataforma Kiwify com apenas 1 clique. O seu dinheiro é devolvido integralmente.<br><br>
+        💡 <strong>Dica de Inscrição:</strong> No checkout oficial da Kiwify, você pode parcelar em até 12x no cartão de crédito (aceita até 2 cartões diferentes) ou escolher Pix para aprovação instantânea.
       </div>
 
       <div class="faq-box">
         <h2>PERGUNTAS FREQUENTES</h2>
         <div class="faq-item">
-          <strong>1. Preciso ter experiência prévia ou conhecimento técnico?</strong>
+          <strong>1. É mensalidade ou pagamento único?</strong>
+          <p><strong>É um PAGAMENTO ÚNICO.</strong> Você não paga mensalidades, renovações surpresa ou taxas adicionais. Tem acesso total à metodologia e à estrutura sem nenhuma cobrança oculta.</p>
+        </div>
+        <div class="faq-item">
+          <strong>2. Quais são as formas de pagamento aceitas?</strong>
+          <p>Você pode pagar via <strong>Pix</strong> (aprovação instantânea com liberação imediata do acesso no seu e-mail) ou em até <strong>12x no cartão de crédito</strong>. A Kiwify também permite <strong>dividir o pagamento em 2 cartões de crédito diferentes</strong> caso queira flexibilidade de limite.</p>
+        </div>
+        <div class="faq-item">
+          <strong>3. Preciso ter experiência prévia ou conhecimento técnico?</strong>
           <p>Não. Todo o passo a passo foi desenhado para quem está começando do absoluto zero, com aulas práticas e acompanhamento da equipe na configuração.</p>
         </div>
         <div class="faq-item">
-          <strong>2. Preciso aparecer em vídeos ou criar conteúdo?</strong>
+          <strong>4. Preciso aparecer em vídeos ou criar conteúdo?</strong>
           <p>Não é necessário aparecer. Você recebe acesso à estrutura e aos materiais já validados prontos para utilização.</p>
         </div>
         <div class="faq-item">
-          <strong>3. Consigo aplicar usando apenas o celular?</strong>
+          <strong>5. Consigo aplicar usando apenas o celular?</strong>
           <p>Sim! Tanto o acesso às aulas quanto a aplicação prática funcionam perfeitamente pelo celular ou pelo computador.</p>
         </div>
         <div class="faq-item">
-          <strong>4. Como e quando recebo meu acesso?</strong>
-          <p>Imediatamente após a confirmação do pagamento (no Pix ou Cartão), a Kiwify envia automaticamente o seu link de acesso direto no seu e-mail e WhatsApp cadastrados.</p>
+          <strong>6. Como e quando recebo meu acesso?</strong>
+          <p>Imediatamente após a confirmação do pagamento (no Pix ou Cartão), a Kiwify envia automaticamente o seu link de acesso direto no seu e-mail cadastrado.</p>
         </div>
       </div>
 
-      <div class="cta-wrap">
-        <a class="btn btn-lime" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">GARANTIR MINHA VAGA COM GARANTIA DE 7 DIAS</a>
-        <div class="price-anchor">
-          ⚡ <span>Vagas com acompanhamento ativo</span> • Liberação imediata após a inscrição
+      <!-- Segundo Bloco de CTA (Rodapé) -->
+      <div class="pricing-card" style="margin-top:32px;">
+        <div class="pricing-badge">🛡️ VAGA COM GARANTIA INCONDICIONAL</div>
+        <div class="pricing-main">
+          <span class="pricing-installments">12x de</span>
+          <span class="pricing-value">R$ 39,62</span>
+        </div>
+        <div class="pricing-cash">ou R$ 397,00 à vista no Pix (Pagamento Único)</div>
+        <a class="btn btn-lime" style="margin-top:16px;" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">GARANTIR MINHA VAGA COM GARANTIA DE 7 DIAS</a>
+        <div class="pricing-security">
+          <span>⚡ Liberação Imediata</span> • <span>🔒 Ambiente 100% Blindado Kiwify</span>
         </div>
       </div>
     </div>
@@ -192,12 +262,68 @@ footer p{max-width:600px;margin:0 auto 8px}
   <p>Este site não é afiliado ao Facebook ou a qualquer entidade da Meta Platforms, Inc.</p>
 </footer>
 
+<!-- Modal de Retenção (Exit Intent + Anti-Abandono) -->
+<div id="exit-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeExitModal()">&times;</button>
+    <div class="modal-badge">⚠️ ESPERE! NÃO DEIXE SUA OPORTUNIDADE PASSAR</div>
+    <h3 class="modal-title">GARANTA SUA ESTRUTURA COM <span class="c-lime">RISCO ZERO</span></h3>
+    <p class="modal-desc">Você está a 1 passo de ter a estrutura operacional completa e acompanhamento passo a passo da nossa equipe.</p>
+    
+    <div class="modal-price-box">
+      <div>Apenas <strong>12x de R$ 39,62</strong> ou R$ 397 à vista no Pix</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:4px;">⚡ Pagamento Único • Menos de R$ 1,32 por dia</div>
+    </div>
+
+    <div class="modal-guar">
+      🛡️ <strong>Garantia Total de 7 Dias:</strong> Teste sem nenhum risco. Se entrar e achar que não é para você, basta um clique na Kiwify para receber 100% do seu dinheiro de volta.
+    </div>
+
+    <a class="btn btn-lime modal-btn" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">👉 QUERO GARANTIR MINHA VAGA COM GARANTIA</a>
+    
+    <button class="modal-dismiss" onclick="closeExitModal()">Não, prefiro abrir mão dessa oportunidade</button>
+  </div>
+</div>
+
 <!-- Affiliate Tracking & Cookie Lock -->
 <iframe src="https://kiwify.app/SZOhdTr?afid=2FYE50JE" style="display:none;width:0;height:0;border:0;" aria-hidden="true"></iframe>
 <script>
 (function() {
   var AFID = "2FYE50JE";
   var CHECKOUT_BASE = "https://pay.kiwify.com.br/NmJqB9z";
+
+  // Data dinâmica em português
+  try {
+    var meses = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+    var hoje = new Date();
+    var topbar = document.getElementById("data-dinamica");
+    if (topbar) {
+      topbar.innerHTML = "🔥 Apresentação Exclusiva Disponível Hoje (" + hoje.getDate() + " de " + meses[hoje.getMonth()] + ") • Vagas com Acompanhamento Limitadas";
+    }
+  } catch(e){}
+
+  // Timer de escassez regressivo de 15 minutos
+  (function initTimer() {
+    var timerEl = document.getElementById("timer-top");
+    if (!timerEl) return;
+    var duration = 15 * 60;
+    var savedStart = sessionStorage.getItem("timer_start");
+    if (!savedStart) {
+      savedStart = Date.now();
+      sessionStorage.setItem("timer_start", savedStart);
+    }
+    function update() {
+      var elapsed = Math.floor((Date.now() - savedStart) / 1000);
+      var remain = duration - (elapsed % duration);
+      var m = Math.floor(remain / 60);
+      var s = remain % 60;
+      timerEl.textContent = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+    }
+    update();
+    setInterval(update, 1000);
+  })();
+
+  // Rastreamento e Propagação de Parâmetros Kiwify + Meta Pixel
   function updateLinks() {
     var currentParams = new URLSearchParams(window.location.search);
     currentParams.set("afid", AFID);
@@ -226,6 +352,40 @@ footer p{max-width:600px;margin:0 auto 8px}
   updateLinks();
   document.addEventListener("DOMContentLoaded", updateLinks);
   setInterval(updateLinks, 1500);
+
+  // Modal Exit Intent
+  var modalShown = false;
+  window.closeExitModal = function() {
+    var m = document.getElementById("exit-modal");
+    if (m) m.style.display = "none";
+  };
+  function showModal() {
+    if (modalShown || sessionStorage.getItem("exit_modal_closed")) return;
+    var m = document.getElementById("exit-modal");
+    if (m) {
+      m.style.display = "flex";
+      modalShown = true;
+      sessionStorage.setItem("exit_modal_closed", "1");
+    }
+  }
+
+  // Desktop: mouse sair para a barra superior
+  document.addEventListener("mouseleave", function(e) {
+    if (e.clientY <= 10) {
+      showModal();
+    }
+  });
+
+  // Mobile / Navegador: tentar voltar no histórico
+  try {
+    history.pushState(null, null, location.href);
+    window.addEventListener("popstate", function() {
+      if (!modalShown && !sessionStorage.getItem("exit_modal_closed")) {
+        showModal();
+        history.pushState(null, null, location.href);
+      }
+    });
+  } catch(e){}
 })();
 </script>
 </body>
