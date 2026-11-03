@@ -66,8 +66,20 @@ strong{font-weight:700}
 .hero .pre{font-size:14px;font-style:italic;text-transform:uppercase;margin:0 auto 14px;max-width:470px;opacity:.95}
 .hero h1{font-size:30px;margin-bottom:14px}
 .hero .sub{font-size:17px;max-width:520px;margin:0 auto 24px;opacity:.92}
-.player-box{max-width:400px;margin:0 auto}
+.player-box{max-width:400px;margin:0 auto;border:2px solid rgba(216,255,45,0.45);border-radius:12px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,0.65)}
 .player-box vturb-smartplayer{display:block;margin:0 auto;width:100%;max-width:400px}
+
+/* Aviso de Retenção VSL (Evita que a pessoa passe direto sem assistir) */
+.vsl-lock-notice{max-width:420px;margin:18px auto 0;background:rgba(255,255,255,0.05);border:1px dashed rgba(216,255,45,0.45);border-radius:10px;padding:14px 16px;font-size:13.5px;color:rgba(255,255,255,0.88);text-align:center}
+.vsl-lock-notice strong{color:var(--lime);display:block;margin-bottom:4px;font-size:14px}
+.vsl-unlock-link{display:inline-block;margin-top:8px;font-size:12px;color:rgba(255,255,255,0.55);background:none;border:none;text-decoration:underline;cursor:pointer}
+.vsl-unlock-link:hover{color:var(--lime)}
+
+/* Bloco Oculto até o Pitch da VSL (Pilar 2 Samuel Poian) */
+.vsl-pitch-content{display:none;animation:fadeInPitch .6s ease-out forwards}
+.vsl-pitch-content.unlocked{display:block}
+@keyframes fadeInPitch{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
 .cta-wrap{margin-top:24px}
 .btn{display:block;width:100%;max-width:460px;margin:0 auto;text-align:center;text-decoration:none;font-family:'Anton',Impact,sans-serif;font-size:23px;letter-spacing:.5px;text-transform:uppercase;line-height:1.15;padding:19px 18px 20px;border-radius:8px;cursor:pointer;transition:transform .15s ease,filter .15s ease}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
@@ -135,9 +147,9 @@ footer p{max-width:600px;margin:0 auto 8px}
   <section class="hero">
     <div class="wrap">
       <img class="logo" src="https://fabiocavalcante.com.br/wp-content/uploads/2026/05/logotopo.png" width="109" height="75" alt="Apresentação Oficial">
-      <p class="pre">Assista ao vídeo completo abaixo para entender cada etapa</p>
-      <h1 class="h-anton">CONHEÇA NOSSA ESTRUTURA OPERACIONAL <span class="c-lime">PRONTA PARA VOCÊ</span></h1>
-      <p class="sub">Veja como funciona nosso acompanhamento prático passo a passo, mesmo que você esteja começando do absoluto zero.</p>
+      <p class="pre">🔊 Ligue o som e assista até o final (leva apenas alguns minutos)</p>
+      <h1 id="hero-headline" class="h-anton">COMO COPIAR NOSSA ESTRUTURA OPERACIONAL <span class="c-lime">PRONTA PARA GERAR CAIXA TODOS OS DIAS</span></h1>
+      <p id="hero-sub" class="sub">Sem precisar aparecer, sem criar produtos do zero e com configuração assistida passo a passo pela nossa equipe.</p>
 
       <div class="player-box">
         <vturb-smartplayer id="vid-6a19542e9cc3b2039d5c688c" style="display:block;margin:0 auto;width:100%;max-width:400px;"></vturb-smartplayer>
@@ -149,108 +161,118 @@ footer p{max-width:600px;margin:0 auto 8px}
         </script>
       </div>
 
-      <!-- Card de Preço e Oferta Clara (Elimina Choque no Checkout e Pré-Qualifica o Comprador) -->
-      <div class="pricing-card">
-        <div class="pricing-badge">⚡ Condição Especial Liberada Hoje</div>
-        <div class="pricing-countdown">
-          ⏳ Condição exclusiva expira em: <span id="timer-top">14:59</span>
-        </div>
-        <div class="pricing-old">De R$ 997,00 por apenas</div>
-        <div class="pricing-main">
-          <span class="pricing-installments">12x de</span>
-          <span class="pricing-value">R$ 39,62</span>
-        </div>
-        <div class="pricing-cash">ou R$ 397,00 à vista no Pix</div>
-        <div class="pricing-daily">💡 Apenas <strong>R$ 1,32 por dia</strong> (Menos que um café)</div>
-
-        <ul class="pricing-checklist">
-          <li>✅ <strong>Pagamento ÚNICO</strong> — Sem mensalidades ou anuidades</li>
-          <li>✅ <strong>Acesso Completo + Estrutura Pronta</strong> para Rodar</li>
-          <li>✅ <strong>Configuração Assistida</strong> Passo a Passo com a Equipe</li>
-          <li>✅ <strong>Liberação Imediata</strong> no seu E-mail após o pagamento</li>
-          <li>✅ <strong>Garantia Incondicional de 7 Dias</strong> Kiwify</li>
-        </ul>
-
-        <a class="btn btn-lime" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">QUERO ACESSAR A ESTRUTURA AGORA</a>
-
-        <div class="pricing-security">
-          <span>🔒 Compra 100% Segura Kiwify</span>
-          <span>🛡️ 7 Dias de Garantia</span>
-          <span>⚡ Acesso Imediato</span>
-        </div>
+      <!-- Aviso de Retenção VSL (Impede que o visitante "passe direto" sem ver o vídeo) -->
+      <div id="vsl-lock-notice" class="vsl-lock-notice">
+        <strong>🔒 O botão de inscrição será liberado durante a apresentação acima</strong>
+        Assista à explicação passo a passo para entender como a estrutura funciona antes de liberar sua vaga.
+        <br>
+        <button type="button" class="vsl-unlock-link" onclick="unlockPitchContent()">Já assisti à apresentação → Liberar acesso agora</button>
       </div>
 
-      <div class="steps-box">
-        <h2>COMO FUNCIONA NA PRÁTICA (3 ETAPAS):</h2>
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div><strong>Acesso Imediato:</strong> Assim que sua inscrição é confirmada na Kiwify, você recebe no seu e-mail o login da área de membros oficial.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div><strong>Estrutura Pronta + Configuração Assistida:</strong> Você não fica sozinho. Nossa equipe orienta cada passo para deixar sua estrutura configurada do zero.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div><strong>Execução Simples pelo Celular ou Computador:</strong> Aplique o método no seu ritmo, sem precisar aparecer e sem precisar criar produtos do zero.</div>
-        </div>
-      </div>
+      <!-- Conteúdo do Pitch (Destrava sincronizado com a VSL ou para visitantes recorrentes) -->
+      <div id="vsl-pitch-content" class="vsl-pitch-content">
+        <div class="pricing-card">
+          <div class="pricing-badge">⚡ Condição Especial Liberada Hoje</div>
+          <div class="pricing-countdown">
+            ⏳ Condição exclusiva expira em: <span id="timer-top">14:59</span>
+          </div>
+          <div class="pricing-old">De R$ 997,00 por apenas</div>
+          <div class="pricing-main">
+            <span class="pricing-installments">12x de</span>
+            <span class="pricing-value">R$ 39,62</span>
+          </div>
+          <div class="pricing-cash">ou R$ 397,00 à vista no Pix</div>
+          <div class="pricing-daily">💡 Apenas <strong>R$ 1,32 por dia</strong> (Menos que um café)</div>
 
-      <div class="benefits">
-        <h2>TUDO O QUE ESTÁ INCLUSO NO SEU ACESSO:</h2>
-        <ul>
-          <li>✅ <strong>Acesso Completo à Metodologia Passo a Passo</strong></li>
-          <li>✅ <strong>Configuração Assistida pela Nossa Equipe</strong></li>
-          <li>✅ <strong>Materiais e Criativos Validados Prontos para Uso</strong></li>
-          <li>✅ <strong>Suporte Dedicado e Comunidade de Alunos</strong></li>
-        </ul>
-      </div>
+          <ul class="pricing-checklist">
+            <li>✅ <strong>Pagamento ÚNICO</strong> — Sem mensalidades ou anuidades</li>
+            <li>✅ <strong>Acesso Completo + Estrutura Pronta</strong> para Rodar</li>
+            <li>✅ <strong>Configuração Assistida</strong> Passo a Passo com a Equipe</li>
+            <li>✅ <strong>Liberação Imediata</strong> no seu E-mail após o pagamento</li>
+            <li>✅ <strong>Garantia Incondicional de 7 Dias</strong> Kiwify</li>
+          </ul>
 
-      <div class="guarantee-box">
-        <h3>🛡️ GARANTIA BLINDADA DE 7 DIAS (RISCO ZERO)</h3>
-        Você tem 7 dias completos para acessar todo o conteúdo e conhecer a estrutura por dentro. Se por qualquer motivo você decidir que não é para você, basta solicitar o reembolso direto na plataforma Kiwify com apenas 1 clique. O seu dinheiro é devolvido integralmente.<br><br>
-        💡 <strong>Dica de Inscrição:</strong> No checkout oficial da Kiwify, você pode parcelar em até 12x no cartão de crédito (aceita até 2 cartões diferentes) ou escolher Pix para aprovação instantânea.
-      </div>
+          <a class="btn btn-lime" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">SIM! QUERO ATIVAR MINHA ESTRUTURA PRONTA AGORA</a>
 
-      <div class="faq-box">
-        <h2>PERGUNTAS FREQUENTES</h2>
-        <div class="faq-item">
-          <strong>1. É mensalidade ou pagamento único?</strong>
-          <p><strong>É um PAGAMENTO ÚNICO.</strong> Você não paga mensalidades, renovações surpresa ou taxas adicionais. Tem acesso total à metodologia e à estrutura sem nenhuma cobrança oculta.</p>
+          <div class="pricing-security">
+            <span>🔒 Compra 100% Segura Kiwify</span>
+            <span>🛡️ 7 Dias de Garantia</span>
+            <span>⚡ Acesso Imediato</span>
+          </div>
         </div>
-        <div class="faq-item">
-          <strong>2. Quais são as formas de pagamento aceitas?</strong>
-          <p>Você pode pagar via <strong>Pix</strong> (aprovação instantânea com liberação imediata do acesso no seu e-mail) ou em até <strong>12x no cartão de crédito</strong>. A Kiwify também permite <strong>dividir o pagamento em 2 cartões de crédito diferentes</strong> caso queira flexibilidade de limite.</p>
-        </div>
-        <div class="faq-item">
-          <strong>3. Preciso ter experiência prévia ou conhecimento técnico?</strong>
-          <p>Não. Todo o passo a passo foi desenhado para quem está começando do absoluto zero, com aulas práticas e acompanhamento da equipe na configuração.</p>
-        </div>
-        <div class="faq-item">
-          <strong>4. Preciso aparecer em vídeos ou criar conteúdo?</strong>
-          <p>Não é necessário aparecer. Você recebe acesso à estrutura e aos materiais já validados prontos para utilização.</p>
-        </div>
-        <div class="faq-item">
-          <strong>5. Consigo aplicar usando apenas o celular?</strong>
-          <p>Sim! Tanto o acesso às aulas quanto a aplicação prática funcionam perfeitamente pelo celular ou pelo computador.</p>
-        </div>
-        <div class="faq-item">
-          <strong>6. Como e quando recebo meu acesso?</strong>
-          <p>Imediatamente após a confirmação do pagamento (no Pix ou Cartão), a Kiwify envia automaticamente o seu link de acesso direto no seu e-mail cadastrado.</p>
-        </div>
-      </div>
 
-      <!-- Segundo Bloco de CTA (Rodapé) -->
-      <div class="pricing-card" style="margin-top:32px;">
-        <div class="pricing-badge">🛡️ VAGA COM GARANTIA INCONDICIONAL</div>
-        <div class="pricing-main">
-          <span class="pricing-installments">12x de</span>
-          <span class="pricing-value">R$ 39,62</span>
+        <div class="steps-box">
+          <h2>COMO FUNCIONA NA PRÁTICA (3 ETAPAS):</h2>
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div><strong>Acesso Imediato:</strong> Assim que sua inscrição é confirmada na Kiwify, você recebe no seu e-mail o login da área de membros oficial.</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div><strong>Estrutura Pronta + Configuração Assistida:</strong> Você não fica sozinho. Nossa equipe orienta cada passo para deixar sua estrutura configurada do zero.</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div><strong>Execução Simples pelo Celular ou Computador:</strong> Aplique o método no seu ritmo, sem precisar aparecer e sem precisar criar produtos do zero.</div>
+          </div>
         </div>
-        <div class="pricing-cash">ou R$ 397,00 à vista no Pix (Pagamento Único)</div>
-        <a class="btn btn-lime" style="margin-top:16px;" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">GARANTIR MINHA VAGA COM GARANTIA DE 7 DIAS</a>
-        <div class="pricing-security">
-          <span>⚡ Liberação Imediata</span> • <span>🔒 Ambiente 100% Blindado Kiwify</span>
+
+        <div class="benefits">
+          <h2>TUDO O QUE ESTÁ INCLUSO NO SEU ACESSO:</h2>
+          <ul>
+            <li>✅ <strong>Acesso Completo à Metodologia Passo a Passo</strong></li>
+            <li>✅ <strong>Configuração Assistida pela Nossa Equipe</strong></li>
+            <li>✅ <strong>Materiais e Criativos Validados Prontos para Uso</strong></li>
+            <li>✅ <strong>Suporte Dedicado e Comunidade de Alunos</strong></li>
+          </ul>
+        </div>
+
+        <div class="guarantee-box">
+          <h3>🛡️ GARANTIA BLINDADA DE 7 DIAS (RISCO ZERO)</h3>
+          Você tem 7 dias completos para acessar todo o conteúdo e conhecer a estrutura por dentro. Se por qualquer motivo você decidir que não é para você, basta solicitar o reembolso direto na plataforma Kiwify com apenas 1 clique. O seu dinheiro é devolvido integralmente.<br><br>
+          💡 <strong>Dica de Inscrição:</strong> No checkout oficial da Kiwify, você pode parcelar em até 12x no cartão de crédito (aceita até 2 cartões diferentes) ou escolher Pix para aprovação instantânea.
+        </div>
+
+        <div class="faq-box">
+          <h2>PERGUNTAS FREQUENTES</h2>
+          <div class="faq-item">
+            <strong>1. É mensalidade ou pagamento único?</strong>
+            <p><strong>É um PAGAMENTO ÚNICO.</strong> Você não paga mensalidades, renovações surpresa ou taxas adicionais. Tem acesso total à metodologia e à estrutura sem nenhuma cobrança oculta.</p>
+          </div>
+          <div class="faq-item">
+            <strong>2. Quais são as formas de pagamento aceitas?</strong>
+            <p>Você pode pagar via <strong>Pix</strong> (aprovação instantânea com liberação imediata do acesso no seu e-mail) ou em até <strong>12x no cartão de crédito</strong>. A Kiwify também permite <strong>dividir o pagamento em 2 cartões de crédito diferentes</strong> caso queira flexibilidade de limite.</p>
+          </div>
+          <div class="faq-item">
+            <strong>3. Preciso ter experiência prévia ou conhecimento técnico?</strong>
+            <p>Não. Todo o passo a passo foi desenhado para quem está começando do absoluto zero, com aulas práticas e acompanhamento da equipe na configuração.</p>
+          </div>
+          <div class="faq-item">
+            <strong>4. Preciso aparecer em vídeos ou criar conteúdo?</strong>
+            <p>Não é necessário aparecer. Você recebe acesso à estrutura e aos materiais já validados prontos para utilização.</p>
+          </div>
+          <div class="faq-item">
+            <strong>5. Consigo aplicar usando apenas o celular?</strong>
+            <p>Sim! Tanto o acesso às aulas quanto a aplicação prática funcionam perfeitamente pelo celular ou pelo computador.</p>
+          </div>
+          <div class="faq-item">
+            <strong>6. Como e quando recebo meu acesso?</strong>
+            <p>Imediatamente após a confirmação do pagamento (no Pix ou Cartão), a Kiwify envia automaticamente o seu link de acesso direto no seu e-mail cadastrado.</p>
+          </div>
+        </div>
+
+        <!-- Segundo Bloco de CTA (Rodapé) -->
+        <div class="pricing-card" style="margin-top:32px;">
+          <div class="pricing-badge">🛡️ VAGA COM GARANTIA INCONDICIONAL</div>
+          <div class="pricing-main">
+            <span class="pricing-installments">12x de</span>
+            <span class="pricing-value">R$ 39,62</span>
+          </div>
+          <div class="pricing-cash">ou R$ 397,00 à vista no Pix (Pagamento Único)</div>
+          <a class="btn btn-lime" style="margin-top:16px;" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">SIM! QUERO ATIVAR MINHA ESTRUTURA PRONTA AGORA</a>
+          <div class="pricing-security">
+            <span>⚡ Liberação Imediata</span> • <span>🔒 Ambiente 100% Blindado Kiwify</span>
+          </div>
         </div>
       </div>
     </div>
@@ -266,9 +288,9 @@ footer p{max-width:600px;margin:0 auto 8px}
 <div id="exit-modal" class="modal-overlay" style="display:none;">
   <div class="modal-content">
     <button class="modal-close" onclick="closeExitModal()">&times;</button>
-    <div class="modal-badge">⚠️ ESPERE! NÃO DEIXE SUA OPORTUNIDADE PASSAR</div>
+    <div class="modal-badge">⚠️ ESPERE! NÃO FECHE ANTES DE VER ISSO</div>
     <h3 class="modal-title">GARANTA SUA ESTRUTURA COM <span class="c-lime">RISCO ZERO</span></h3>
-    <p class="modal-desc">Você está a 1 passo de ter a estrutura operacional completa e acompanhamento passo a passo da nossa equipe.</p>
+    <p class="modal-desc">Liberamos seu acesso direto à condição especial com acompanhamento passo a passo da nossa equipe.</p>
     
     <div class="modal-price-box">
       <div>Apenas <strong>12x de R$ 39,62</strong> ou R$ 397 à vista no Pix</div>
@@ -279,9 +301,9 @@ footer p{max-width:600px;margin:0 auto 8px}
       🛡️ <strong>Garantia Total de 7 Dias:</strong> Teste sem nenhum risco. Se entrar e achar que não é para você, basta um clique na Kiwify para receber 100% do seu dinheiro de volta.
     </div>
 
-    <a class="btn btn-lime modal-btn" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">👉 QUERO GARANTIR MINHA VAGA COM GARANTIA</a>
+    <a class="btn btn-lime modal-btn" href="https://pay.kiwify.com.br/NmJqB9z?afid=2FYE50JE">👉 SIM! QUERO ATIVAR MINHA ESTRUTURA AGORA</a>
     
-    <button class="modal-dismiss" onclick="closeExitModal()">Não, prefiro abrir mão dessa oportunidade</button>
+    <button class="modal-dismiss" onclick="closeExitModal()">Continuar assistindo à apresentação</button>
   </div>
 </div>
 
@@ -291,6 +313,59 @@ footer p{max-width:600px;margin:0 auto 8px}
 (function() {
   var AFID = "2FYE50JE";
   var CHECKOUT_BASE = "https://pay.kiwify.com.br/NmJqB9z";
+  // Tempo do Pitch configurado no VTurb (1170s = 19m30s)
+  var PITCH_SECONDS = 1170;
+
+  window.unlockPitchContent = function() {
+    var pitchEl = document.getElementById("vsl-pitch-content");
+    var lockNotice = document.getElementById("vsl-lock-notice");
+    if (pitchEl && !pitchEl.classList.contains("unlocked")) {
+      pitchEl.classList.add("unlocked");
+      if (lockNotice) lockNotice.style.display = "none";
+      try { localStorage.setItem("vsl_pitch_unlocked", "1"); } catch(e){}
+    }
+  };
+
+  // Se o visitante já desbloqueou antes ou passou ?oferta=1 na URL, mostra imediatamente
+  try {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (localStorage.getItem("vsl_pitch_unlocked") === "1" || urlParams.get("oferta") === "1") {
+      window.unlockPitchContent();
+    } else {
+      setTimeout(window.unlockPitchContent, PITCH_SECONDS * 1000);
+    }
+
+    // Message Match Dinâmico por Ângulo de Criativo (Samuel Poian — Retenção de VSL)
+    var angulo = urlParams.get("angulo");
+    var angulosMap = {
+      "sem_aparecer": {
+        h: 'COMO OPERAR UMA ESTRUTURA PRONTA EM SILÊNCIO <span class="c-lime">SEM PRECISAR APARECER EM VÍDEOS</span>',
+        s: 'Receba os materiais e criativos já validados para rodar nos bastidores usando apenas 1 a 2 horas por dia.'
+      },
+      "configuracao": {
+        h: 'TRAVADO NA PARTE TÉCNICA? <span class="c-lime">NÓS CONFIGURAMOS A ESTRUTURA COM VOCÊ</span>',
+        s: 'Esqueça cursos longos e teóricos. Veja no vídeo abaixo como nossa equipe acompanha sua ativação passo a passo.'
+      },
+      "celular": {
+        h: 'COMO TRANSFORMAR 45 MINUTOS NO CELULAR EM UMA <span class="c-lime">OPERAÇÃO PRONTA DE CAIXA DIÁRIO</span>',
+        s: 'Processo 100% aplicável pelo celular, sem estoque físico e com materiais prontos para copiar e colar.'
+      },
+      "atalho": {
+        h: 'POR QUE TENTAR DO ZERO SE VOCÊ PODE PLUGAR NUMA <span class="c-lime">ESTRUTURA QUE JÁ CONVERTE?</span>',
+        s: 'Pule meses de tentativa e erro copiando páginas, vídeos e criativos que já foram validados no campo de batalha.'
+      },
+      "segunda_renda": {
+        h: 'CONSTRUA SUA SEGUNDA FONTE DE RENDA <span class="c-lime">SEM PRECISAR LARGAR SEU EMPREGO ATUAL</span>',
+        s: 'Monte uma operação paralela enxuta que roda no automático enquanto você cumpre sua rotina normal.'
+      }
+    };
+    if (angulo && angulosMap[angulo]) {
+      var hEl = document.getElementById("hero-headline");
+      var sEl = document.getElementById("hero-sub");
+      if (hEl) hEl.innerHTML = angulosMap[angulo].h;
+      if (sEl) sEl.textContent = angulosMap[angulo].s;
+    }
+  } catch(e){}
 
   // Data dinâmica em português
   try {
@@ -353,13 +428,14 @@ footer p{max-width:600px;margin:0 auto 8px}
   document.addEventListener("DOMContentLoaded", updateLinks);
   setInterval(updateLinks, 1500);
 
-  // Modal Exit Intent
+  // Modal Exit Intent (também destrava a oferta na página para não perder a venda)
   var modalShown = false;
   window.closeExitModal = function() {
     var m = document.getElementById("exit-modal");
     if (m) m.style.display = "none";
   };
   function showModal() {
+    window.unlockPitchContent();
     if (modalShown || sessionStorage.getItem("exit_modal_closed")) return;
     var m = document.getElementById("exit-modal");
     if (m) {
