@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obelisco Care | Continuidade Operacional & Manutenção Elétrica Prioritária em Lisboa</title>
+  <meta name="description" content="Proteja a sua empresa, restaurante ou condomínio em Lisboa contra avarias elétricas e paragens inesperadas. Conheça os Planos Obelisco Care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card: #121216;
+      --card-2: #18181d;
+      --border: #27272a;
+      --gold: #facc15;
+      --gold-dark: #eab308;
+      --green: #10b981;
+      --green-bright: #22c55e;
+      --red: #ef4444;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .topbar {
+      background: linear-gradient(90deg, #facc15, #eab308);
+      color: #09090b;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 10px 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .hero {
+      padding: 36px 0 48px;
+      text-align: center;
+      background: radial-gradient(800px 380px at 50% 0%, rgba(250, 204, 21, 0.12), transparent 70%);
+    }
+    .badge-niche {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(250, 204, 21, 0.12);
+      border: 1px solid rgba(250, 204, 21, 0.35);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+    h1 span {
+      color: var(--gold);
+    }
+    .subheadline {
+      font-size: 16.5px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 26px;
+    }
+
+    /* VSL Player Container */
+    .vsl-wrapper {
+      position: relative;
+      max-width: 380px;
+      margin: 0 auto 24px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      box-shadow: 0 20px 60px -15px rgba(250, 204, 21, 0.28);
+      background: #000;
+    }
+    .vsl-header-bar {
+      background: #18181b;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-bottom: 1px solid #27272a;
+    }
+    .vsl-video-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      cursor: pointer;
+    }
+    .vsl-video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .unmute-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.25s ease;
+    }
+    .unmute-btn {
+      background: var(--gold);
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 900;
+      font-size: 15px;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: pulseBtn 1.8s infinite;
+    }
+    .vsl-progress-track {
+      width: 100%;
+      height: 8px;
+      background: #27272a;
+    }
+    .vsl-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #facc15, #22c55e);
+      transition: width 0.2s linear;
+    }
+
+    @keyframes pulseBtn {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    /* Primary CTA Box */
+    .cta-box {
+      background: linear-gradient(180deg, rgba(250, 204, 21, 0.1) 0%, rgba(24, 24, 29, 0.95) 100%);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin: 0 auto 32px;
+      text-align: center;
+      box-shadow: 0 15px 40px -10px rgba(250, 204, 21, 0.15);
+    }
+    .cta-status {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .cta-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .cta-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--green-bright);
+      color: #052e16;
+      font-weight: 900;
+      font-size: 17px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px -5px rgba(34, 197, 94, 0.55);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      animation: pulseBtn 2.2s infinite;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    .cta-micro {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* Comparison Section (Unlock after VSL / Scroll) */
+    .section-block {
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+    .section-title span { color: var(--gold); }
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .comp-grid { grid-template-columns: 1fr; }
+    }
+    .comp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .comp-card.bad {
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+    .comp-card.good {
+      border: 2px solid var(--gold);
+      background: linear-gradient(180deg, rgba(250, 204, 21, 0.06), var(--card));
+    }
+    .comp-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comp-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+      color: #d4d4d8;
+    }
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    /* Before / After Proof */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .proof-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .proof-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .proof-label {
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .proof-label.before { background: rgba(239, 68, 68, 0.18); color: #fca5a5; }
+    .proof-label.after { background: rgba(16, 185, 129, 0.18); color: #6ee7b7; }
+
+    /* Segments */
+    .seg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 600px) {
+      .seg-grid { grid-template-columns: 1fr; }
+    }
+    .seg-card {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .seg-card h4 {
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .seg-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    ⚡ Grande Lisboa • Intervenção Elétrica Prioritária & Planos B2B / Condomínios
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge-niche">🛡️ Obelisco Radical • Eletricidade & ITED</div>
+      <h1>Uma falha elétrica não avisa.<br><span>Quanto custa 1 dia de portas fechadas no seu negócio?</span></h1>
+      <p class="subheadline">Assista à apresentação rápida abaixo (9 segundos) e veja como blindar a sua empresa, loja ou condomínio em Lisboa com atendimento prioritário garantido.</p>
+
+      <!-- VSL Player -->
+      <div class="vsl-wrapper">
+        <div class="vsl-header-bar">
+          🔊 APRESENTAÇÃO OFICIAL OBELISCO CARE (GRANDE LISBOA)
+        </div>
+        <div class="vsl-video-box" id="vslBox" onclick="toggleAudio()">
+          <video id="vslVideo" src="./video_obeliscocare_gemini_6e9d8ff7.mp4" poster="./video_obeliscocare_thumb.jpg" autoplay muted loop playsinline></video>
+          <div class="unmute-overlay" id="unmuteOverlay">
+            <div class="unmute-btn">
+              🔊 CLIQUE PARA ATIVAR O SOM
+            </div>
+          </div>
+        </div>
+        <div class="vsl-progress-track">
+          <div class="vsl-progress-bar" id="vslProgress"></div>
+        </div>
+      </div>
+
+      <!-- CTA Principal Focada no Produto (Estrutura Samuel Poian) -->
+      <div class="cta-box">
+        <div class="cta-status">🟢 Equipa Técnica Disponível na Grande Lisboa</div>
+        <div class="cta-title">Peça o Diagnóstico Técnico + Tabela Obelisco Care</div>
+        <p class="cta-sub">Fale diretamente com o Eng.º / Técnico Responsável no WhatsApp e descubra o plano ideal (Empresas, Restauração, Clínicas ou Condomínios) ou solicite urgência imediata.</p>
+        
+        <a id="mainCtaBtn" class="btn-whatsapp" href="https://wa.me/351911132401?text=Ol%C3%A1%20Diego!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20do%20Obelisco%20Care%20e%20quero%20receber%20as%20informa%C3%A7%C3%B5es%20e%20diagn%C3%B3stico%20para%20o%20meu%20espa%C3%A7o%20em%20Lisboa." target="_blank" rel="noopener">
+          📲 QUERO ATENDIMENTO PRIORITÁRIO NO WHATSAPP
+        </a>
+
+        <div class="cta-micro">
+          <span>⚡ Resposta em menos de 5 min</span>
+          <span>✓ Técnicos Certificados DGEG / ITED</span>
+          <span>📍 Lisboa, Oeiras, Cascais, Sintra, Almada e Loures</span>
+        </div>
+      </div>
+
+      <!-- Comparativo Direto -->
+      <div class="section-block">
+        <h2 class="section-title">Porque é que as empresas em Lisboa estão a trocar as <span>chamadas avulsas</span> pelo <span>Obelisco Care</span>?</h2>
+        <div class="comp-grid">
+          <div class="comp-card bad">
+            <h3 style="color:#f87171;">❌ Sem Plano (Urgência Avulsa)</h3>
+            <ul class="comp-list">
+              <li><span>✖</span> <strong>Negócio parado:</strong> Horas ou dias à espera que um eletricista tenha agenda.</li>
+              <li><span>✖</span> <strong>Taxas de urgência caras:</strong> Cada deslocação inesperada custa o triplo.</li>
+              <li><span>✖</span> <strong>Risco de incêndio e coimas:</strong> Quadros sobrecarregados sem vistoria térmica.</li>
+              <li><span>✖</span> <strong>Reparações provisórias:</strong> Técnicos diferentes que não conhecem a sua instalação.</li>
+            </ul>
+          </div>
+          <div class="comp-card good">
+            <h3 style="color:#facc15;">✅ Com Plano Obelisco Care</h3>
+            <ul class="comp-list">
+              <li><span>✔</span> <strong>Prioridade Máxima:</strong> Equipa dedicada para não deixar a sua operação parar.</li>
+              <li><span>✔</span> <strong>Previsibilidade Total:</strong> Manutenção preventiva mensal incluída sem surpresas.</li>
+              <li><span>✔</span> <strong>Laudos & Segurança:</strong> Verificação de disjuntores, tomadas, ITED e iluminação de emergência.</li>
+              <li><span>✔</span> <strong>Linha Direta WhatsApp:</strong> Contacto imediato (`911 132 401`) com histórico completo do seu espaço.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prova Visual Antes e Depois -->
+      <div class="section-block">
+        <h2 class="section-title">Padrão Técnico <span>Obelisco Radical</span> na Prática</h2>
+        <div class="proof-grid">
+          <div class="proof-item">
+            <img src="./reel4_1_antes.jpg" alt="Quadro Antigo em Risco">
+            <div class="proof-label before">⚠️ Antes: Risco de Curto & Incêndio</div>
+          </div>
+          <div class="proof-item">
+            <img src="./reel4_2_depois.jpg" alt="Quadro Normalizado Obelisco">
+            <div class="proof-label after">✅ Depois: Quadro Normalizado & Seguro</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Para Quem É -->
+      <div class="section-block">
+        <h2 class="section-title">Soluções à Medida para <span>3 Grandes Setores</span></h2>
+        <div class="seg-grid">
+          <div class="seg-card">
+            <h4>🍽️ Restauração, Cafés & Comércio</h4>
+            <p>Evite arcas frigoríficas desligadas, disjuntores a disparar em hora de ponta e paragens de faturação.</p>
+          </div>
+          <div class="seg-card">
+            <h4>🏢 Escritórios, Clínicas & PME</h4>
+            <p>Estabilidade elétrica, quadros organizados, certificação ITED/Redes e manutenção contínua.</p>
+          </div>
+          <div class="seg-card">
+            <h4>🏘️ Condomínios & Alojamento Local</h4>
+            <p>Vistoria periódica de colunas, quadros comuns, iluminação de emergência e vídeo-porteiro.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda CTA de Fechamento -->
+      <div class="cta-box" style="margin-bottom: 10px;">
+        <div class="cta-title">Não espere pelo próximo apagão ou curto-circuito.</div>
+        <p class="cta-sub">Toque no botão abaixo para falar agora no WhatsApp (`911 132 401`) e agendar a sua avaliação ou urgência.</p>
+        <a id="footerCtaBtn" class="btn-whatsapp" href="https://wa.me/351911132401?text=Ol%C3%A1%20Diego!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20do%20Obelisco%20Care%20e%20quero%20receber%20as%20informa%C3%A7%C3%B5es%20e%20diagn%C3%B3stico%20para%20o%20meu%20espa%C3%A7o%20em%20Lisboa." target="_blank" rel="noopener">
+          📲 FALAR COM ESPECIALISTA NO WHATSAPP (911 132 401)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Obelisco Radical — Eletricidade, ITED & Manutenção Técnica</strong> • Grande Lisboa, Portugal</p>
+    <p style="margin-top:6px;">Linha Direta WhatsApp: +351 911 132 401</p>
+  </footer>
+
+  <script>
+    var video = document.getElementById('vslVideo');
+    var overlay = document.getElementById('unmuteOverlay');
+    var progress = document.getElementById('vslProgress');
+
+    function toggleAudio() {
+      if (video.muted) {
+        video.muted = false;
+        video.currentTime = 0;
+        video.play();
+        overlay.style.opacity = '0';
+        setTimeout(function() { overlay.style.display = 'none'; }, 250);
+      } else {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+
+    video.addEventListener('timeupdate', function() {
+      if (video.duration) {
+        var pct = (video.currentTime / video.duration) * 100;
+        progress.style.width = pct + '%';
+      }
+    });
+
+    // Personalizar mensagem do WhatsApp conforme o anúncio de origem (utm_content / ad)
+    (function customizeWhatsAppCta() {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var adAngle = params.get('angulo') || params.get('utm_content') || '';
+        var msg = "Olá Diego! Vi a apresentação do Obelisco Care e quero receber as informações e diagnóstico para o meu espaço em Lisboa.";
+        if (adAngle === 'urgencia_disjuntor') {
+          msg = "Olá Diego! Vi o anúncio sobre Disjuntor a Desarmar / Sobrecarga e preciso de ajuda técnica em Lisboa.";
+        } else if (adAngle === 'quadro_antes_depois') {
+          msg = "Olá Diego! Vi o anúncio de Reforma e Normalização de Quadros Elétricos em Lisboa e gostaria de um orçamento/diagnóstico.";
+        } else if (adAngle === 'condominios_b2b') {
+          msg = "Olá Diego! Quero conhecer os Planos de Manutenção Preventiva Obelisco Care para Empresas/Condomínios em Lisboa.";
+        }
+        var waUrl = "https://wa.me/351911132401?text=" + encodeURIComponent(msg);
+        document.getElementById('mainCtaBtn').href = waUrl;
+        document.getElementById('footerCtaBtn').href = waUrl;
+      } catch(e) {}
+    })();
+  </script>
+</body>
+</html>
