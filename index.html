@@ -69,15 +69,10 @@ strong{font-weight:700}
 .player-box{max-width:400px;margin:0 auto;border:2px solid rgba(216,255,45,0.45);border-radius:12px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,0.65)}
 .player-box vturb-smartplayer{display:block;margin:0 auto;width:100%;max-width:400px}
 
-/* Aviso de Retenção VSL (Evita que a pessoa passe direto sem assistir) */
-.vsl-lock-notice{max-width:420px;margin:18px auto 0;background:rgba(255,255,255,0.05);border:1px dashed rgba(216,255,45,0.45);border-radius:10px;padding:14px 16px;font-size:13.5px;color:rgba(255,255,255,0.88);text-align:center}
-.vsl-lock-notice strong{color:var(--lime);display:block;margin-bottom:4px;font-size:14px}
-.vsl-unlock-link{display:inline-block;margin-top:8px;font-size:12px;color:rgba(255,255,255,0.55);background:none;border:none;text-decoration:underline;cursor:pointer}
-.vsl-unlock-link:hover{color:var(--lime)}
-
-/* Bloco Oculto até o Pitch da VSL (Pilar 2 Samuel Poian) */
-.vsl-pitch-content{display:none;animation:fadeInPitch .6s ease-out forwards}
-.vsl-pitch-content.unlocked{display:block}
+/* Botão e Conteúdo 100% Visível Imediatamente (Zero Delay) */
+.vsl-lock-notice{display:none!important}
+.vsl-pitch-content{display:block!important;animation:fadeInPitch .6s ease-out forwards}
+.vsl-pitch-content.unlocked{display:block!important}
 @keyframes fadeInPitch{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 .cta-wrap{margin-top:24px}
@@ -313,27 +308,15 @@ footer p{max-width:600px;margin:0 auto 8px}
 (function() {
   var AFID = "2FYE50JE";
   var CHECKOUT_BASE = "https://pay.kiwify.com.br/NmJqB9z";
-  // Tempo do Pitch configurado no VTurb (1170s = 19m30s)
-  var PITCH_SECONDS = 1170;
-
+  // Liberação Imediata do Botão (Sem delay)
   window.unlockPitchContent = function() {
     var pitchEl = document.getElementById("vsl-pitch-content");
     var lockNotice = document.getElementById("vsl-lock-notice");
-    if (pitchEl && !pitchEl.classList.contains("unlocked")) {
-      pitchEl.classList.add("unlocked");
-      if (lockNotice) lockNotice.style.display = "none";
-      try { localStorage.setItem("vsl_pitch_unlocked", "1"); } catch(e){}
-    }
+    if (pitchEl) pitchEl.classList.add("unlocked");
+    if (lockNotice) lockNotice.style.display = "none";
   };
-
-  // Se o visitante já desbloqueou antes ou passou ?oferta=1 na URL, mostra imediatamente
-  try {
-    var urlParams = new URLSearchParams(window.location.search);
-    if (localStorage.getItem("vsl_pitch_unlocked") === "1" || urlParams.get("oferta") === "1") {
-      window.unlockPitchContent();
-    } else {
-      setTimeout(window.unlockPitchContent, PITCH_SECONDS * 1000);
-    }
+  window.unlockPitchContent();
+  document.addEventListener("DOMContentLoaded", window.unlockPitchContent);
 
     // Message Match Dinâmico por Ângulo de Criativo (Samuel Poian — Retenção de VSL)
     var angulo = urlParams.get("angulo");
